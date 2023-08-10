@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+.message{
+  width: 300px;
+  background: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  animation: popup 4s forwards;
+  /* animation-fill-mode: forwards; */
+  /* アニメーションが終わった後に戻ってこない（初期値ではなく、0%の位置で停止） */
+}
+
+@keyframes popup{
+  0%{
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  20%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  
+}
+
+.loading{
+  margin-top: 30px;
+  width: 32px;
+  height: 32px;
+  border-top: 8px solid red;
+  border-right: 8px solid blue;
+  border-bottom: 8px solid green;
+  border-left: 8px solid yellow;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  /* animation-timing-function: ; */
+}
+
+@keyframes spin {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.box{
+  margin-top: 30px;
+  width: 80px;
+  height: 80px;
+  background: pink;
+  animation-name: move-around;
+  /* animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+  animation: move-around 4s infinite 1s alternate;
+}
+
+@keyframes move-around {
+  25% {
+    transform: translate(100px, 0);
+    border-radius: 50%;
+  }
+  50% {
+    transform: translate(100px, 100px);
+    border-radius: 0%;
+  }
+  75% {
+    transform: translate(0, 100px);
+    border-radius: 50%;
+  }
+  100% {
+    transform: translate(0, 200px);
+
+
+  }
+
+}
